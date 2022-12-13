@@ -1,0 +1,38 @@
+.root
+    padding: 1.5rem
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    border-radius: 10px
+    .bottom
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: row
+        .profile
+            display: flex
+            align-items: center
+            justify-content: space-between
+            flex-direction: row
+            gap: 1rem
+            .image
+                width: 35px
+                height: 35px
+                position: relative
+                img
+                    border-radius: 50%
+                    object-fit: cover
+            .data
+                display: flex
+                flex-direction: column
+                gap: 0.25rem
+                small
+                    opacity: 0.5
+                .username
+                    font-weight: 500
+                    opacity: 0.8
+        .actions
+            display: flex
+            align-items: center
+            flex-direction: row

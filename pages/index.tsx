@@ -1,16 +1,23 @@
-import { Button, Card } from "@mui/material";
-import { Fragment } from "react";
 import Navbar from "../components/Navbar/Navbar";
+import Post from "../components/Post/Post";
 import Base from "../layout/Base";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { selectTheme, setDark, setLight } from "../redux/slices/themeSlice";
+import styles from "../styles/Home.module.sass";
 
 const Home = () => {
-  const theme = useAppSelector(selectTheme);
-  const dispatch = useAppDispatch();
   return (
     <Base>
-      <Navbar />
+      <Navbar position="absolute" />
+      <main className={styles.posts}>
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </main>
     </Base>
   );
 };

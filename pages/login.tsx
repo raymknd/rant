@@ -5,6 +5,7 @@ import Register from "../components/Login/Register/Register";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 import { IPages } from "../components/Login/shared.types";
+import useActualPreference from "../hooks/useActualPreference";
 
 const TransitionWrapper = (props: { children: ReactNode }) => {
   return (
@@ -22,9 +23,14 @@ const TransitionWrapper = (props: { children: ReactNode }) => {
 
 const LoginPage = () => {
   const [actual, setActual] = useState<IPages>("login");
+  const theme = useActualPreference();
   return (
     <Base>
-      <main className={styles.root}>
+      <main
+        className={`${styles.root} ${
+          theme === "dark" ? styles.dark : styles.light
+        }`}
+      >
         <AnimatePresence mode="wait">
           {actual === "login" && (
             <TransitionWrapper key="login">

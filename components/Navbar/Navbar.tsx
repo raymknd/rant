@@ -11,6 +11,7 @@ import RantLogoDark from "../../assets/global/logos/logo_dark.png";
 import RantLogoLight from "../../assets/global/logos/logo_light.png";
 import { INavbarProps } from "./Navbar.types";
 import Preferences from "../Preferences/Preferences";
+import useActualPreference from "../../hooks/useActualPreference";
 
 const Root = styled.header.attrs({ className: styles.root })<INavbarProps>`
   position: ${({ position }) => position};
@@ -21,15 +22,8 @@ const Root = styled.header.attrs({ className: styles.root })<INavbarProps>`
 `;
 
 const Navbar = ({ position }: INavbarProps) => {
-  const themeSelector = useAppSelector(selectTheme);
-  const autoTheme = useMediaQuery("(prefers-color-scheme: dark)")
-    ? "dark"
-    : "light";
+  const theme = useActualPreference();
   const router = useRouter();
-  const theme =
-    themeSelector === "dark" || themeSelector === "light"
-      ? themeSelector
-      : autoTheme;
   return (
     <Fragment>
       <Root position={position}>
@@ -44,7 +38,13 @@ const Navbar = ({ position }: INavbarProps) => {
           />
         </section>
         <section className={styles.search}>
-          <TextField label="Buscar" variant="standard" size="small" fullWidth />
+          <TextField
+            label="Buscar"
+            variant="outlined"
+            color="secondary"
+            size="small"
+            fullWidth
+          />
         </section>
         <section className={styles.profile}>
           <Button
