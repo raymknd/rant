@@ -11,7 +11,7 @@ import styles from "./Preferences.module.sass";
 const Preferences = () => {
   const themeSelector = useThemeSelector();
   return (
-    <Dialog open sx={{ maxWidth: 878, margin: "0 auto" }} fullWidth>
+    <Dialog open={false} sx={{ maxWidth: 878, margin: "0 auto" }} fullWidth>
       <DialogContent>
         <Typography component="div" variant="h6">
           Preferencias

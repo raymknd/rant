@@ -1,4 +1,4 @@
-import { Button, useMediaQuery } from "@mui/material";
+import { Button, TextField, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import styles from "./Navbar.module.sass";
@@ -43,6 +43,9 @@ const Navbar = ({ position }: INavbarProps) => {
             width={139.5}
           />
         </section>
+        <section className={styles.search}>
+          <TextField label="Buscar" variant="standard" size="small" fullWidth />
+        </section>
         <section className={styles.profile}>
           <Button
             href="/login"
@@ -50,7 +53,8 @@ const Navbar = ({ position }: INavbarProps) => {
               e.preventDefault();
               router.push("/login");
             }}
-            variant="outlined"
+            variant="contained"
+            color="secondary"
           >
             Login
           </Button>
