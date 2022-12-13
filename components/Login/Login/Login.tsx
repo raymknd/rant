@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import Card from "../Card/Card";
+import Heading from "../Card/components/Heading/Heading";
 import Loading from "./components/Loading/Loading";
 import Qr from "./components/Qr/Qr";
 import styles from "./Login.module.sass";
@@ -28,23 +29,23 @@ const Login = ({ onChange }: ILoginProps) => {
     <Fragment>
       <Card>
         {loading && <Loading />}
-        <div className={styles.heading}>
-          <Typography variant="h5" component="div">
-            Hola ✌️
-          </Typography>
-          <small>
-            Aún no tienes cuenta?{" "}
-            <Link
-              href="/register"
-              onClick={(e) => {
-                e.preventDefault();
-                onChange("register");
-              }}
-            >
-              Registrate aquí
-            </Link>
-          </small>
-        </div>
+        <Heading
+          title="Hola ✌️"
+          subtitle={
+            <Fragment>
+              Aún no tienes cuenta?{" "}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onChange("register");
+                }}
+              >
+                Registrate aquí
+              </a>
+            </Fragment>
+          }
+        />
         <TextField
           label="Usuario"
           disabled={loading}

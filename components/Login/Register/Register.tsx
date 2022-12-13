@@ -2,6 +2,7 @@ import { ArrowDownward } from "@mui/icons-material";
 import { Button, TextField, TextFieldProps, Typography } from "@mui/material";
 import Link from "next/link";
 import Card from "../Card/Card";
+import Heading from "../Card/components/Heading/Heading";
 import Loading from "../Login/components/Loading/Loading";
 import styles from "./Register.module.sass";
 import { IRegisterProps } from "./Register.types";
@@ -17,12 +18,10 @@ const Register = ({ onChange }: IRegisterProps) => {
   return (
     <Card className={styles.card}>
       {/* <Loading /> */}
-      <div className={styles.heading}>
-        <Typography variant="h5" component="div">
-          Bienvenid@ 🖖
-        </Typography>
-        <small>Al crear una cuenta aceptas los terminos de Rant Place.</small>
-      </div>
+      <Heading
+        title="Bienvenid@ 🖖"
+        subtitle="Al crear una cuenta de Rant Place aceptas los términos y condiciones"
+      />
       <TextField label="Nombre" {...TextFieldsSharedProps} />
       <TextField label="Usuario" {...TextFieldsSharedProps} />
       <TextField type="email" label="Correo" {...TextFieldsSharedProps} />
