@@ -1,5 +1,12 @@
 import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
-import { deepPurple, grey, lime, purple } from "@mui/material/colors";
+import {
+  deepPurple,
+  grey,
+  lightGreen,
+  lime,
+  purple,
+  red,
+} from "@mui/material/colors";
 import Head from "next/head";
 import { Fragment, ReactNode, useEffect } from "react";
 import useColorScheme from "../hooks/useColorScheme";
@@ -17,7 +24,7 @@ const Base = (props: { children: ReactNode }) => {
   const muiTheme = createTheme({
     palette: {
       mode: theme === "dark" || theme === "light" ? theme : prefersColorScheme,
-      primary: lime,
+      primary: lightGreen,
       secondary: grey,
     },
   });

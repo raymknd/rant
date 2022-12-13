@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../redux/hooks";
 import { selectTheme, ThemeState } from "../redux/slices/themeSlice";
 
 const useColorScheme = () => {
